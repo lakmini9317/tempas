@@ -147,7 +147,7 @@
 							<div class="form-group" id="msg"></div>
 							<input type="hidden" name="id">
 							<div class="form-group">
-								<label class="control-label">House No</label>
+								<label class="control-label">Land No</label>
 								<input type="text" class="form-control" name="house_no" required="">
 							</div>
 							<div class="form-group">
@@ -228,7 +228,7 @@
 
 				}
 				else if(resp==2){
-					$('#msg').html('<div class="alert alert-danger">House number already exist.</div>')
+					$('#msg').html('<div class="alert alert-danger">Land number already exist.</div>')
 					end_load()
 				}
 			}

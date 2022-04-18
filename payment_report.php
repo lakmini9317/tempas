@@ -56,7 +56,7 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 										<th>#</th>
 										<th>Date</th>
 										<th>Tenant</th>
-										<th>House #</th>
+										<th>Land #</th>
 										<th>Invoice</th>
 										<th>Amount</th>
 									</tr>

@@ -52,7 +52,7 @@
                                         <h4><b>
                                             <?php echo $conn->query("SELECT * FROM houses")->num_rows ?>
                                         </b></h4>
-                                        <p><b>Total Houses</b></p>
+                                        <p><b>Total Lands</b></p>
                                     </div>
                                 </div>
                                 <div class="card-footer">

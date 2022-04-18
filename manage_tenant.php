@@ -37,7 +37,7 @@ foreach($qry->fetch_array() as $k => $val){
 		</div>
 		<div class="form-group row">
 			<div class="col-md-4">
-				<label for="" class="control-label">House</label>
+				<label for="" class="control-label">Land</label>
 				<select name="house_id" id="" class="custom-select select2">
 					<option value=""></option>
 					<?php 

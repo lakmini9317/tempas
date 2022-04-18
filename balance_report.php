@@ -43,7 +43,7 @@
 									<tr>
 										<th>#</th>
 										<th>Tenant</th>
-										<th>House #</th>
+										<th>Land #</th>
 										<th>Monthly Rate</th>
 										<th>Payable Months</th>
 										<th>Payable Amount</th>

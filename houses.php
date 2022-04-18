@@ -136,7 +136,7 @@
 
 				}
 				else if(resp==2){
-					$('#msg').html('<div class="alert alert-danger">House number already exist.</div>')
+					$('#msg').html('<div class="alert alert-danger">Land number already exist.</div>')
 					end_load()
 				}
 			}
