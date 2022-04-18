@@ -55,7 +55,7 @@ header("location:index.php?page=home");
 		background:#59b6ec61;
 		display: flex;
 		align-items: center;
-		/*background: url(assets/uploads/blood-cells.jpg);
+		background: url(assets/uploads/bg.jpg);
 	    background-repeat: no-repeat;
 	    background-size: cover;*/
 	}
@@ -79,7 +79,7 @@ div#login-right::before {
     left: 0;
     width: calc(100%);
     height: calc(100%);
-    /*background: #000000e0;*/
+    background: #7be1c52e;*/
 }
 
 </style>
@@ -93,7 +93,7 @@ div#login-right::before {
 
   		<div id="login-right" class="bg-light">
   			<div class="w-100">
-			<h4 class="text-white text-center"><b><?php echo $_SESSION['system']['name'] ?></b></h4>
+			<h4 class="text-orange text-center"><b><?php echo $_SESSION['system']['name'] ?></b></h4>
 			<br>
 			<br>
   			<div class="card col-md-8">
