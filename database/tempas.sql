@@ -38,9 +38,9 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`) VALUES
 (1, 'Duplex'),
-(2, 'Single-Family Home'),
-(3, 'Multi-Family Home'),
-(4, '2-story house');
+(2, 'Sample A'),
+(3, 'Multi Block '),
+(4, 'Industrial');
 
 -- --------------------------------------------------------
 
