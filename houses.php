@@ -9,13 +9,13 @@
 			<form action="" id="manage-house">
 				<div class="card">
 					<div class="card-header">
-						    House Form
+						    Lands Form
 				  	</div>
 					<div class="card-body">
 							<div class="form-group" id="msg"></div>
 							<input type="hidden" name="id">
 							<div class="form-group">
-								<label class="control-label">House No</label>
+								<label class="control-label">Land No</label>
 								<input type="text" class="form-control" name="house_no" required="">
 							</div>
 							<div class="form-group">
@@ -59,14 +59,14 @@
 			<div class="col-md-8">
 				<div class="card">
 					<div class="card-header">
-						<b>House List</b>
+						<b>Land List</b>
 					</div>
 					<div class="card-body">
 						<table class="table table-bordered table-hover">
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
-									<th class="text-center">House</th>
+									<th class="text-center">Land</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
@@ -79,8 +79,8 @@
 								<tr>
 									<td class="text-center"><?php echo $i++ ?></td>
 									<td class="">
-										<p>House #: <b><?php echo $row['house_no'] ?></b></p>
-										<p><small>House Type: <b><?php echo $row['cname'] ?></b></small></p>
+										<p>Land #: <b><?php echo $row['house_no'] ?></b></p>
+										<p><small>Land Type: <b><?php echo $row['cname'] ?></b></small></p>
 										<p><small>Description: <b><?php echo $row['description'] ?></b></small></p>
 										<p><small>Price: <b><?php echo number_format($row['price'],2) ?></b></small></p>
 									</td>
