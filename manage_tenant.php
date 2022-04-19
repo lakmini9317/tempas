@@ -49,7 +49,7 @@ foreach($qry->fetch_array() as $k => $val){
 				</select>
 			</div>
 			<div class="col-md-4">
-				<label for="" class="control-label">Registration Date</label>
+				<label for="" class="control-label">Land Allocated Period</label>
 				<input type="date" class="form-control" name="date_in"  value="<?php echo isset($date_in) ? date("Y-m-d",strtotime($date_in)) :'' ?>" required>
 			</div>
 		</div>
