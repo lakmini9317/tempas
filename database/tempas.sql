@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 26, 2020 at 07:07 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: Apr 19, 2022 at 06:33 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `house_rental_db`
+-- Database: `tempas`
 --
 
 -- --------------------------------------------------------
@@ -61,7 +61,8 @@ CREATE TABLE `houses` (
 --
 
 INSERT INTO `houses` (`id`, `house_no`, `category_id`, `description`, `price`) VALUES
-(1, '623', 4, 'Sample', 2500);
+(1, '623', 4, 'Sample', 2500),
+(2, '1', 1, 'fbfh', 15000);
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,7 @@ CREATE TABLE `system_settings` (
 --
 
 INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `about_content`) VALUES
-(1, 'Temporary Allocation Management System', 'info@uda.gov.lk', '+9411 2 875 911', '');
+(1, 'Temporary Allocation Management System', 'info@uda.gov.lk', '+6948 8542 623', '1603344720_1602738120_pngtree-purple-hd-business-banner-image_5493.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,7 @@ CREATE TABLE `tenants` (
 --
 
 INSERT INTO `tenants` (`id`, `firstname`, `middlename`, `lastname`, `email`, `contact`, `house_id`, `status`, `date_in`) VALUES
-(2, 'John', 'C', 'Smith', 'jsmith@sample.com', '+18456-5455-55', 1, 1, '2020-07-02');
+(2, 'cs', 'C', 'Isuru', 'isuru@uda.gov.lk', '0452221112', 1, 1, '2020-07-02');
 
 -- --------------------------------------------------------
 
@@ -207,7 +208,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `payments`
