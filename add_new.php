@@ -122,27 +122,7 @@
                         </div>
                     </div>
 
-					<div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-								<label class="control-label">Lot No.</label>
-								<input type="text" class="form-control" name="house_no" required="">
-							</div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-								<label class="control-label">Date of Allocation</label>
-								<input type="text" class="form-control" name="house_no" required="">
-							</div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-								<label class="control-label">Physical Possession Handed Over Date</label>
-								<input type="text" class="form-control" name="house_no" required="">
-							</div>
-                        </div>
-                    </div>
-
+					
 					<div class="card-body">
 							<div class="form-group" id="msg"></div>
 							<input type="hidden" name="id">

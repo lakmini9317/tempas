@@ -269,7 +269,32 @@ Class Action {
 	}
 	function save_tenant(){
 		extract($_POST);
-		$data = " firstname = '$firstname' ";
+		$data = " agref = '$agref' ";
+		$data .= ", fileno = '$fileno' ";
+		$data .= ", procode = '$procode' ";
+		$data .= ", cuscode = '$cuscode' ";
+		$data .= ", noc = '$noc' ";
+		$data .= ", privadd = '$privadd' ";
+		$data .= ", premadd = '$premadd' ";
+		$data .= ", extent = '$extent' ";
+		$data .= ", planno = '$planno' ";
+		$data .= ", lotno = '$lotno' ";
+		$data .= ", allodate = '$allodate' ";
+		$data .= ", phyhodate = '$phyhodate' ";
+		$data .= ", alloperiod = '$alloperiod' ";
+		$data .= ", expdate = '$expdate' ";
+		$data .= ", monrent = '$monrent' ";
+		$data .= ", tax = '$tax' ";
+		$data .= ", secudep = '$secudep' ";
+		$data .= ", secureceipt = '$secureceipt' ";
+		$data .= ", intrst = '$intrst' ";
+		$data .= ", apprv = '$apprv' ";
+		$data .= ", dperiod = '$dperiod' "; 
+		$data .= ", damnt = '$damnt' ";
+		$data .= ", oic = '$oic' ";
+		$data .= ", rrdav = '$rrdav' ";
+
+		$data .= ", firstname = '$firstname' ";
 		$data .= ", lastname = '$lastname' ";
 		$data .= ", middlename = '$middlename' ";
 		$data .= ", email = '$email' ";

@@ -6,7 +6,7 @@
 		<div class="row mb-4 mt-4">
 			<div class="col-md-12">
 				
-			</div>
+			</div>   
 		</div>
 		<div class="row">
 			<!-- FORM Panel -->
@@ -17,7 +17,7 @@
 					<div class="card-header">
 						<b>List of Tenant</b>
 						<span class="float:right"><a class="btn btn-primary btn-block btn-sm col-sm-2 float-right" href="javascript:void(0)" id="new_tenant">
-					<i class="fa fa-plus"></i> New Tenant
+					<i class="fa fa-plus"></i> New Allocation
 				</a></span>
 					</div>
 					<div class="card-body">
@@ -100,7 +100,7 @@
 	})
 	
 	$('#new_tenant').click(function(){
-		uni_modal("New Tenant","manage_tenant.php","mid-large")
+		uni_modal("New Temporary Allocation","manage_tenant.php","large")
 		
 	})
 
