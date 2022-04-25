@@ -21,7 +21,7 @@ Class Action {
 			$qry = $this->db->query("SELECT * FROM users where username = '".$username."' and password = '".md5($password)."' ");
 			if($qry->num_rows > 0){
 				foreach ($qry->fetch_array() as $key => $value) {
-					if($key != 'passwors' && !is_numeric($key))
+					if($key != 'password' && !is_numeric($key))
 						$_SESSION['login_'.$key] = $value;
 				}
 				if($_SESSION['login_type'] != 1){
@@ -44,14 +44,14 @@ Class Action {
 		$qry = $this->db->query("SELECT * FROM users where username = '".$username."' and password = '".md5($password)."' ");
 		if($qry->num_rows > 0){
 			foreach ($qry->fetch_array() as $key => $value) {
-				if($key != 'passwors' && !is_numeric($key))
+				if($key != 'password' && !is_numeric($key))
 					$_SESSION['login_'.$key] = $value;
 			}
 			if($_SESSION['login_alumnus_id'] > 0){
 				$bio = $this->db->query("SELECT * FROM alumnus_bio where id = ".$_SESSION['login_alumnus_id']);
 				if($bio->num_rows > 0){
 					foreach ($bio->fetch_array() as $key => $value) {
-						if($key != 'passwors' && !is_numeric($key))
+						if($key != 'password' && !is_numeric($key))
 							$_SESSION['bio'][$key] = $value;
 					}
 				}
@@ -241,6 +241,27 @@ Class Action {
 			return 1;
 		}
 	}
+
+
+	function save_paycategory(){
+		extract($_POST);
+		$data = " name = '$name' ";
+			if(empty($id)){
+				$save = $this->db->query("INSERT INTO payment_cat set $data");
+			}else{
+				$save = $this->db->query("UPDATE payment_cat set $data where id = $id");
+			}
+		if($save)
+			return 1;
+	}
+	function delete_paycategory(){
+		extract($_POST);
+		$delete = $this->db->query("DELETE FROM payment_cat where id = ".$id);
+		if($delete){
+			return 1;
+		}
+	}
+
 	function save_house(){
 		extract($_POST);
 		$data = " house_no = '$house_no' ";

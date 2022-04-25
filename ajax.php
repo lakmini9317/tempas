@@ -59,6 +59,19 @@ if($action == "delete_category"){
 	if($delete)
 		echo $delete;
 }
+
+if($action == "save_paycategory"){
+	$save = $crud->save_paycategory();
+	if($save)
+		echo $save;
+}
+
+if($action == "delete_paycategory"){
+	$delete = $crud->delete_paycategory();
+	if($delete)
+		echo $delete;
+}
+
 if($action == "save_house"){
 	$save = $crud->save_house();
 	if($save)
