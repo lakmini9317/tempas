@@ -11,125 +11,151 @@ foreach($qry->fetch_array() as $k => $val){
 	<form action="" id="manage-tenant">
 		<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="agref" class="control-label">Agreement Reference No</label>
-				<input type="text" class="form-control" name="agref"  value="<?php echo isset($agref) ? $agref :'' ?>" required>
+		<div style="background-color:#E5E5E5;padding:20px;border-radius:25px;">
+			<div class="row form-group">
+				<div class="col-md-4">
+					<label for="agref" class="control-label">Agreement Reference No</label>
+					<input type="text" class="form-control" name="agref"  value="<?php echo isset($agref) ? $agref :'' ?>" required>
+				</div>
+				<div class="col-md-4">
+					<label for="" class="control-label">File No</label>
+					<input type="text" class="form-control" name="fileno"  value="<?php echo isset($fileno) ? $fileno :'' ?>" required>
+				</div>
+				<div class="col-md-4">
+					<label for="" class="control-label">Project Code</label>
+					<input type="text" class="form-control" name="procode"  value="<?php echo isset($procode) ? $procode :'' ?>" required>
+				</div>			
 			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">File No</label>
-				<input type="text" class="form-control" name="fileno"  value="<?php echo isset($fileno) ? $fileno :'' ?>" required>
+
+			<div class="row form-group">
+				<div class="col-md-4">
+					<label for="" class="control-label">Customer Code</label>
+					<input type="text" class="form-control" name="cuscode"  value="<?php echo isset($cuscode) ? $cuscode :'' ?>" required>
+				</div>
+				<div class="col-md-4">
+					<label for="" class="control-label">Name of the Customer</label>
+					<input type="text" class="form-control" name="noc"  value="<?php echo isset($noc) ? $noc :'' ?>" required>
+				</div>	
+				<div class="col-md-4">
+					<label for="" class="control-label">Private Address</label>
+					<input type="text" class="form-control" name="privadd"  value="<?php echo isset($privadd) ? $privadd :'' ?>" required>
+				</div>		
 			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Project Code</label>
-				<input type="text" class="form-control" name="procode"  value="<?php echo isset($procode) ? $procode :'' ?>" required>
+
+			<div class="row form-group">
+				<div class="col-md-4">
+					<label for="" class="control-label">Premises Address</label>
+					<input type="text" class="form-control" name="premadd"  value="<?php echo isset($premadd) ? $premadd :'' ?>" required>
+				</div>
+				<div class="col-md-4">
+					<label for="" class="control-label">Extent</label>
+					<input type="text" class="form-control" name="extent"  value="<?php echo isset($extent) ? $extent :'' ?>" required>
+				</div>							
+			</div>
+		</div> <br>
+
+		<div style="background-color:#E5E5E5;padding:20px;border-radius:25px;">
+
+			<div class="row form-group">
+				<div class="col-md-4">
+					<label for="" class="control-label">Plan No</label>
+					<input type="text" class="form-control" name="planno"  value="<?php echo isset($planno) ? $planno :'' ?>" required>
+				</div>
+				<div class="col-md-4">
+					<label for="" class="control-label">Lot No</label>
+					<input type="text" class="form-control" name="lotno"  value="<?php echo isset($lotno) ? $lotno :'' ?>" required>
+				</div>
+				<div class="col-md-4">
+					<label for="" class="control-label">Date of Allocation</label>
+					<input type="date" class="form-control" name="allodate"  value="<?php echo isset($allodate) ? date("Y-m-d",strtotime($allodate)) :'' ?>" required>
+				</div>	
+			</div>
+
+			<div class="row form-group">				
+				<div class="col-md-4">
+					<label for="" class="control-label">Physically Handed Over Date</label>
+					<input type="date" class="form-control" name="phyhodate"  value="<?php echo isset($phyhodate) ? date("Y-m-d",strtotime($phyhodate)) :'' ?>" required>
+				</div>	
+				<div class="col-md-4">
+					<label for="" class="control-label">Period of Allocation</label>
+					<input type="text" class="form-control" name="alloperiod"  value="<?php echo isset($alloperiod) ? $alloperiod :'' ?>" required>
+				</div>
+				<div class="col-md-4">
+					<label for="" class="control-label">Date of Expiry</label>
+					<input type="date" class="form-control" name="expdate"  value="<?php echo isset($expdate) ? date("Y-m-d",strtotime($expdate)) :'' ?>" required>
+				</div>						
 			</div>			
-		</div>
+		</div> <br>
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Customer Code</label>
-				<input type="text" class="form-control" name="cuscode"  value="<?php echo isset($cuscode) ? $cuscode :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">name of the Customer</label>
-				<input type="text" class="form-control" name="noc"  value="<?php echo isset($noc) ? $noc :'' ?>" required>
-			</div>	
-			<div class="col-md-4">
-				<label for="" class="control-label">Private Address</label>
-				<input type="text" class="form-control" name="privadd"  value="<?php echo isset($privadd) ? $privadd :'' ?>" required>
-			</div>		
-		</div>
+		<div style="background-color:#E5E5E5;padding:20px;border-radius:25px;">
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Premises Address</label>
-				<input type="text" class="form-control" name="premadd"  value="<?php echo isset($premadd) ? $premadd :'' ?>" required>
+			<div class="row form-group">
+				
+				<div class="col-md-4">
+					<label for="" class="control-label">Current Monthly Rent</label>
+					<input type="number" class="form-control" name="monrent"  value="<?php echo isset($monrent) ? $monrent :'' ?>" required>
+				</div>	
+					<div class="col-md-4">
+					<label for="" class="control-label">Taxes</label>
+					<input type="number" class="form-control" name="tax"  value="<?php echo isset($tax) ? $tax :'' ?>" required>
+				</div>		
+				<div class="col-md-4">
+					<label for="" class="control-label">Security Deposit</label>
+					<input type="number" class="form-control" name="secudep"  value="<?php echo isset($secudep) ? $secudep :'' ?>" required>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Extent</label>
-				<input type="text" class="form-control" name="extent"  value="<?php echo isset($extent) ? $extent :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Plan No</label>
-				<input type="text" class="form-control" name="planno"  value="<?php echo isset($planno) ? $planno :'' ?>" required>
-			</div>					
-		</div>
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Lot No</label>
-				<input type="text" class="form-control" name="lotno"  value="<?php echo isset($lotno) ? $lotno :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Date of Allocation</label>
-				<input type="date" class="form-control" name="allodate"  value="<?php echo isset($allodate) ? date("Y-m-d",strtotime($allodate)) :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Physically Handed Over Date</label>
-				<input type="date" class="form-control" name="phyhodate"  value="<?php echo isset($phyhodate) ? date("Y-m-d",strtotime($phyhodate)) :'' ?>" required>
-			</div>							
-		</div>
+			<div class="row form-group">
+			
+				<div class="col-md-4">
+					<label for="" class="control-label">Receipt No</label>
+					<input type="text" class="form-control" name="secureceipt"  value="<?php echo isset($secureceipt) ? $secureceipt :'' ?>" required>
+				</div>	
+				<div class="col-md-4">
+					<label for="" class="control-label">Rate of Interest</label>
+					<input type="number" class="form-control" name="intrst"  value="<?php echo isset($intrst) ? $intrst :'' ?>" required>
+				</div>
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Period of Allocation</label>
-				<input type="text" class="form-control" name="alloperiod"  value="<?php echo isset($alloperiod) ? $alloperiod :'' ?>" required>
 			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Date of Expiry</label>
-				<input type="date" class="form-control" name="expdate"  value="<?php echo isset($expdate) ? date("Y-m-d",strtotime($expdate)) :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Current Monthly Rent</label>
-				<input type="number" class="form-control" name="monrent"  value="<?php echo isset($monrent) ? $monrent :'' ?>" required>
-			</div>									
-		</div>
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Taxes</label>
-				<input type="number" class="form-control" name="tax"  value="<?php echo isset($tax) ? $tax :'' ?>" required>
-			</div>		
-			<div class="col-md-4">
-				<label for="" class="control-label">Security Deposit</label>
-				<input type="number" class="form-control" name="secudep"  value="<?php echo isset($secudep) ? $secudep :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Receipt No</label>
-				<input type="text" class="form-control" name="secureceipt"  value="<?php echo isset($secureceipt) ? $secureceipt :'' ?>" required>
-			</div>								
-		</div>
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Rate of Interest</label>
-				<input type="number" class="form-control" name="intrst"  value="<?php echo isset($intrst) ? $intrst :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Approved By</label>
-				<input type="text" class="form-control" name="apprv"  value="<?php echo isset($apprv) ? $apprv :'' ?>" required>
-			</div>	
-			<div class="col-md-4">
-				<label for="" class="control-label">Due Period</label>
-				<input type="text" class="form-control" name="dperiod"  value="<?php echo isset($dperiod) ? $dperiod :'' ?>" required>
-			</div>										
-		</div>
+		</div> <br>
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Due Amount</label>
-				<input type="number" class="form-control" name="damnt"  value="<?php echo isset($damnt) ? $damnt :'' ?>" required>
-			</div>	
-			<div class="col-md-4">
-				<label for="" class="control-label">Officer In Charge</label>
-				<input type="text" class="form-control" name="oic"  value="<?php echo isset($oic) ? $oic :'' ?>" required>
-			</div>		
-			<div class="col-md-4">
-				<label for="" class="control-label">Rent Renewal Details Allocated Value</label>
-				<input type="text" class="form-control" name="rrdav"  value="<?php echo isset($rrdav) ? $rrdav :'' ?>" required>
-			</div>						
-		</div>
+		<div style="background-color:#E5E5E5;padding:20px;border-radius:25px;">
+			<div class="row form-group">
+				
+				<div class="col-md-3">
+					<label for="" class="control-label">Approved By</label>
+					<input type="text" class="form-control" name="apprv"  value="<?php echo isset($apprv) ? $apprv :'' ?>" required>
+				</div>	
+				<div class="col-md-3">
+					<label for="" class="control-label">Due Period</label>
+					<input type="text" class="form-control" name="dperiod"  value="<?php echo isset($dperiod) ? $dperiod :'' ?>" required>
+				</div>	
+				<div class="col-md-3">
+					<label for="" class="control-label">Due Amount</label>
+					<input type="number" class="form-control" name="damnt"  value="<?php echo isset($damnt) ? $damnt :'' ?>" required>
+				</div>
+				<div class="col-md-3">
+					<label for="" class="control-label">Officer In Charge</label>
+					<input type="text" class="form-control" name="oic"  value="<?php echo isset($oic) ? $oic :'' ?>" required>
+				</div>										
+			</div>
+		</div> <br>
+
+		
+		<div style="background-color:#E5E5E5;padding:20px;border-radius:25px;">
+			<h3>Rent Renewal Details</h3>
+			<div class="row form-group">							
+				<div class="col-md-4">
+					<label for="" class="control-label"> Allocated Value</label>
+					<input type="text" class="form-control" name="rrdav"  value="<?php echo isset($rrdav) ? $rrdav :'' ?>" required>
+				</div>						
+			</div>
+		</div> <br>
+	
+
+		
 
 
 

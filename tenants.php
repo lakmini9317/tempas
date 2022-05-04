@@ -15,7 +15,7 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<b>List of Tenant</b>
+						<b>List of Temporary Allocation</b>
 						<span class="float:right"><a class="btn btn-primary btn-block btn-sm col-sm-2 float-right" href="javascript:void(0)" id="new_tenant">
 					<i class="fa fa-plus"></i> New Allocation
 				</a></span>
@@ -105,7 +105,7 @@
 	})
 
 	$('.view_payment').click(function(){
-		uni_modal("Tenants Payments","view_payment.php?id="+$(this).attr('data-id'),"large")
+		uni_modal("Temporary Allocation Payments","view_payment.php?id="+$(this).attr('data-id'),"large")
 		
 	})
 	$('.edit_tenant').click(function(){
