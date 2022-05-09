@@ -9,7 +9,7 @@
 }
 </style>
 
-<nav class="navbar fixed-top " style="padding:0;min-height: 3.5rem;background-color:#0B5F78 ;">
+<nav class="navbar fixed-top " style="padding:0;min-height: 3.5rem;background-color:#3e4444 ;">
   <div class="container-fluid mt-2 mb-2">
   	<div class="col-lg-12">
   		<div class="col-md-1 float-left" style="display: flex;">

@@ -45,8 +45,8 @@
                     <hr>
                     <div class="row">
                         <div class="col-md-4 mb-3">
-                            <div class="card" style="border:1px solid #1C8148;">
-                                <div class="card-body " style="background-color:#1C8148">
+                            <div class="card" style="border:1px solid #3e4444;">
+                                <div class="card-body " style="background-color:#3e4444">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-home "></i></span>
                                         <h4><b>
@@ -65,8 +65,8 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <div class="card " style="border:1px solid #1F8ADD;">
-                                <div class="card-body " style="background-color:#1F8ADD">
+                            <div class="card " style="border:1px solid #82b74b;">
+                                <div class="card-body " style="background-color:#82b74b">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-user-friends "></i></span>
                                         <h4><b>
@@ -85,8 +85,8 @@
                             </div>
                         </div>
                         <div class="col-md-4 mb-3">
-                            <div class="card " style="border:1px solid #B54998;">
-                                <div class="card-body " style="background-color:#B54998">
+                            <div class="card " style="border:1px solid #405d27;">
+                                <div class="card-body " style="background-color:#405d27">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-file-invoice "></i></span>
                                         <h4><b>
