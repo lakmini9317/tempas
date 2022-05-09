@@ -15,7 +15,7 @@ foreach($qry->fetch_array() as $k => $val){
 			<div class="row form-group">
 				<div class="col-md-4">
 					<label for="agref" class="control-label">Agreement Reference No</label>
-					<input type="text" class="form-control" name="agref"  value="<?php echo isset($agref) ? $agref :'' ?>" required>
+					<input type="text" class="form-control" name="agref"  value="<?php echo isset($agref) ? $agref :'' ?>" >
 				</div>
 				<div class="col-md-4">
 					<label for="" class="control-label">File No</label>
@@ -143,7 +143,7 @@ foreach($qry->fetch_array() as $k => $val){
 				</div>	
 				<div class="col-md-4">
 					<label for="" class="control-label">Rate of Interest</label>
-					<input type="number" class="form-control" name="intrst"  value="<?php echo isset($intrst) ? $intrst :'' ?>" required>
+					<input type="number" class="form-control" name="intrst"  value="<?php echo isset($intrst) ? $intrst :'' ?>" >
 				</div>
 
 			</div>
@@ -160,11 +160,11 @@ foreach($qry->fetch_array() as $k => $val){
 				</div>	
 				<div class="col-md-3">
 					<label for="" class="control-label">Due Period</label>
-					<input type="text" class="form-control" name="dperiod"  value="<?php echo isset($dperiod) ? $dperiod :'' ?>" required>
+					<input type="text" class="form-control" name="dperiod"  value="<?php echo isset($dperiod) ? $dperiod :'' ?>" >
 				</div>	
 				<div class="col-md-3">
 					<label for="" class="control-label">Due Amount</label>
-					<input type="number" class="form-control" name="damnt"  value="<?php echo isset($damnt) ? $damnt :'' ?>" required>
+					<input type="number" class="form-control" name="damnt"  value="<?php echo isset($damnt) ? $damnt :'' ?>" >
 				</div>
 				<div class="col-md-3">
 					<label for="" class="control-label">Officer In Charge</label>
@@ -179,7 +179,7 @@ foreach($qry->fetch_array() as $k => $val){
 			<div class="row form-group">							
 				<div class="col-md-4">
 					<label for="" class="control-label"> Allocated Value</label>
-					<input type="text" class="form-control" name="rrdav"  value="<?php echo isset($rrdav) ? $rrdav :'' ?>" required>
+					<input type="text" class="form-control" name="rrdav"  value="<?php echo isset($rrdav) ? $rrdav :'' ?>" >
 				</div>						
 			</div>
 		</div> <br>
