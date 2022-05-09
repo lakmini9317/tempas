@@ -9,7 +9,7 @@
 			<form action="" id="manage-house">
 				<div class="card">
 					<div class="card-header">
-						    Lands Form
+						    Add New Land
 				  	</div>
 					<div class="card-body">
 							<div class="form-group" id="msg"></div>

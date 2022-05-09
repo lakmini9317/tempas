@@ -17,7 +17,7 @@ foreach($qry->fetch_array() as $k => $val){
                 <option value=""></option>
 
             <?php 
-            $tenant = $conn->query("SELECT *,concat(lastname,', ',firstname,' ',middlename) as name FROM tenants where status = 1 order by name asc");
+            $tenant = $conn->query("SELECT *,concat(firstname) as name FROM tenants where status = 1 order by name asc");
             while($row=$tenant->fetch_assoc()):
             ?>
             <option value="<?php echo $row['id'] ?>" <?php echo isset($tenant_id) && $tenant_id == $row['id'] ? 'selected' : '' ?>><?php echo ucwords($row['name']) ?></option>
