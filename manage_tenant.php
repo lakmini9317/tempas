@@ -34,7 +34,7 @@ foreach($qry->fetch_array() as $k => $val){
 				</div>
 				<div class="col-md-4">
 					<label for="" class="control-label">Name of the Customer</label>
-					<input type="text" class="form-control" name="noc"  value="<?php echo isset($noc) ? $noc :'' ?>" required>
+					<input type="text" class="form-control" name="firstname"  value="<?php echo isset($firstname) ? $firstname :'' ?>" required>
 				</div>	
 				<div class="col-md-4">
 					<label for="" class="control-label">Private Address</label>
@@ -43,14 +43,19 @@ foreach($qry->fetch_array() as $k => $val){
 			</div>
 
 			<div class="row form-group">
+
 				<div class="col-md-4">
-					<label for="" class="control-label">Premises Address</label>
-					<input type="text" class="form-control" name="premadd"  value="<?php echo isset($premadd) ? $premadd :'' ?>" required>
+					<label for="" class="control-label">Email</label>
+					<input type="email" class="form-control" name="email"  value="<?php echo isset($email) ? $email :'' ?>" >
 				</div>
+
 				<div class="col-md-4">
-					<label for="" class="control-label">Extent</label>
-					<input type="text" class="form-control" name="extent"  value="<?php echo isset($extent) ? $extent :'' ?>" required>
-				</div>							
+					<label for="" class="control-label">Contact Number</label>
+					<input type="text" class="form-control" name="contact"  value="<?php echo isset($contact) ? $contact :'' ?>" >
+				</div>
+			
+				
+										
 			</div>
 		</div> <br>
 
@@ -58,9 +63,32 @@ foreach($qry->fetch_array() as $k => $val){
 
 			<div class="row form-group">
 				<div class="col-md-4">
+					<label for="" class="control-label">Premises Address</label>
+					<select name="house_id" id="" class="custom-select select2">
+						<!-- <option value=""></option> -->
+						<?php 
+						$house = $conn->query("SELECT * FROM houses where id not in (SELECT house_id from tenants where status = 1) ".(isset($house_id)? " or id = $house_id": "" )." ");
+						while($row= $house->fetch_assoc()):
+						?>
+						<option value="<?php echo $row['id'] ?>" <?php echo isset($house_id) && $house_id == $row['id'] ? 'selected' : '' ?>><?php echo $row['house_no'] ?></option>
+						<?php endwhile; ?>
+					</select>
+				</div>
+
+				<div class="col-md-4">
+					<label for="" class="control-label">Extent</label>
+					<input type="text" class="form-control" name="extent"  value="<?php echo isset($extent) ? $extent :'' ?>" required>
+				</div>	
+
+				<div class="col-md-4">
 					<label for="" class="control-label">Plan No</label>
 					<input type="text" class="form-control" name="planno"  value="<?php echo isset($planno) ? $planno :'' ?>" required>
 				</div>
+
+			</div>
+
+			<div class="row form-group">
+				
 				<div class="col-md-4">
 					<label for="" class="control-label">Lot No</label>
 					<input type="text" class="form-control" name="lotno"  value="<?php echo isset($lotno) ? $lotno :'' ?>" required>
@@ -69,16 +97,18 @@ foreach($qry->fetch_array() as $k => $val){
 					<label for="" class="control-label">Date of Allocation</label>
 					<input type="date" class="form-control" name="allodate"  value="<?php echo isset($allodate) ? date("Y-m-d",strtotime($allodate)) :'' ?>" required>
 				</div>	
-			</div>
 
-			<div class="row form-group">				
 				<div class="col-md-4">
 					<label for="" class="control-label">Physically Handed Over Date</label>
 					<input type="date" class="form-control" name="phyhodate"  value="<?php echo isset($phyhodate) ? date("Y-m-d",strtotime($phyhodate)) :'' ?>" required>
-				</div>	
+				</div>
+			</div>
+
+			<div class="row form-group">				
+					
 				<div class="col-md-4">
 					<label for="" class="control-label">Period of Allocation</label>
-					<input type="text" class="form-control" name="alloperiod"  value="<?php echo isset($alloperiod) ? $alloperiod :'' ?>" required>
+					<input type="date" class="form-control" name="date_in"  value="<?php echo isset($date_in) ? date("Y-m-d",strtotime($date_in)) :'' ?>" required>
 				</div>
 				<div class="col-md-4">
 					<label for="" class="control-label">Date of Expiry</label>
@@ -159,50 +189,9 @@ foreach($qry->fetch_array() as $k => $val){
 
 
 
-		<div class="row form-group">
-			<div class="col-md-4">
-				<label for="" class="control-label">Last Name</label>
-				<input type="text" class="form-control" name="lastname"  value="<?php echo isset($lastname) ? $lastname :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">First Name</label>
-				<input type="text" class="form-control" name="firstname"  value="<?php echo isset($firstname) ? $firstname :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Middle Name</label>
-				<input type="text" class="form-control" name="middlename"  value="<?php echo isset($middlename) ? $middlename :'' ?>">
-			</div>
-		</div>
+	
 
-		<div class="form-group row">
-			<div class="col-md-4">
-				<label for="" class="control-label">Email</label>
-				<input type="email" class="form-control" name="email"  value="<?php echo isset($email) ? $email :'' ?>" required>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Contact #</label>
-				<input type="text" class="form-control" name="contact"  value="<?php echo isset($contact) ? $contact :'' ?>" required>
-			</div>
-			
-		</div>
-		<div class="form-group row">
-			<div class="col-md-4">
-				<label for="" class="control-label">Land</label>
-				<select name="house_id" id="" class="custom-select select2">
-					<!-- <option value=""></option> -->
-					<?php 
-					$house = $conn->query("SELECT * FROM houses where id not in (SELECT house_id from tenants where status = 1) ".(isset($house_id)? " or id = $house_id": "" )." ");
-					while($row= $house->fetch_assoc()):
-					?>
-					<option value="<?php echo $row['id'] ?>" <?php echo isset($house_id) && $house_id == $row['id'] ? 'selected' : '' ?>><?php echo $row['house_no'] ?></option>
-					<?php endwhile; ?>
-				</select>
-			</div>
-			<div class="col-md-4">
-				<label for="" class="control-label">Land Allocated Period</label>
-				<input type="date" class="form-control" name="date_in"  value="<?php echo isset($date_in) ? date("Y-m-d",strtotime($date_in)) :'' ?>" required>
-			</div>
-		</div>
+		
 	</form>
 </div>
 <script>

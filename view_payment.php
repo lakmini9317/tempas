@@ -1,7 +1,7 @@
 <?php include 'db_connect.php' ?>
 
 <?php 
-$tenants =$conn->query("SELECT t.*,concat(t.lastname,', ',t.firstname,' ',t.middlename) as name,h.house_no,h.price FROM tenants t inner join houses h on h.id = t.house_id where t.id = {$_GET['id']} ");
+$tenants =$conn->query("SELECT t.*,concat(t.firstname) as name,h.house_no,h.price FROM tenants t inner join houses h on h.id = t.house_id where t.id = {$_GET['id']} ");
 foreach($tenants->fetch_array() as $k => $v){
 	if(!is_numeric($k)){
 		$$k = $v;

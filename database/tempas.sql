@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 06:33 AM
+-- Generation Time: Apr 21, 2022 at 09:07 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -40,7 +40,9 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 (1, 'Duplex'),
 (2, 'Sample A'),
 (3, 'Multi Block '),
-(4, 'Industrial');
+(4, 'Industrial'),
+(8, 'isurucs'),
+(14, 'isurucsi8i');
 
 -- --------------------------------------------------------
 
@@ -61,8 +63,8 @@ CREATE TABLE `houses` (
 --
 
 INSERT INTO `houses` (`id`, `house_no`, `category_id`, `description`, `price`) VALUES
-(1, '623', 4, 'Sample', 2500),
-(2, '1', 1, 'fbfh', 15000);
+(2, '1', 1, 'fbfh', 15000),
+(3, '23', 4, 'bb', 10000);
 
 -- --------------------------------------------------------
 
@@ -84,7 +86,20 @@ CREATE TABLE `payments` (
 
 INSERT INTO `payments` (`id`, `tenant_id`, `amount`, `invoice`, `date_created`) VALUES
 (1, 2, 2500, '123456', '2020-10-26 11:29:35'),
-(2, 2, 7500, '136654', '2020-10-26 11:30:21');
+(2, 2, 7500, '136654', '2020-10-26 11:30:21'),
+(3, 3, 5000, '65477', '2022-04-19 10:27:03'),
+(4, 3, 10000, '546456456', '2022-04-20 13:12:58');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_cat`
+--
+
+CREATE TABLE `payment_cat` (
+  `id` int(30) NOT NULL,
+  `name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -131,7 +146,9 @@ CREATE TABLE `tenants` (
 --
 
 INSERT INTO `tenants` (`id`, `firstname`, `middlename`, `lastname`, `email`, `contact`, `house_id`, `status`, `date_in`) VALUES
-(2, 'cs', 'C', 'Isuru', 'isuru@uda.gov.lk', '0452221112', 1, 1, '2020-07-02');
+(2, 'cs', 'C', 'Isuru', 'isuru@uda.gov.lk', '0452221112', 1, 1, '2020-07-02'),
+(3, 'Isuru', '', 'Siriwardhana', 'isuru@uda.com', '0452221112', 2, 1, '2022-05-27'),
+(4, 'Isuru', '', 'Siriwardhana', 'isuru@uda.lk', '0452221112', 3, 1, '2022-07-31');
 
 -- --------------------------------------------------------
 
@@ -152,7 +169,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `type`) VALUES
-(1, 'Administrator', 'admin', '0192023a7bbd73250516f069df18b500', 1);
+(1, 'Administrator', 'admin', '0192023a7bbd73250516f069df18b500', 1),
+(2, 'userx', 'user', 'c93ccd78b2076528346216b3b2f701e6', 2);
 
 --
 -- Indexes for dumped tables
@@ -174,6 +192,12 @@ ALTER TABLE `houses`
 -- Indexes for table `payments`
 --
 ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `payment_cat`
+--
+ALTER TABLE `payment_cat`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -202,19 +226,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `payment_cat`
+--
+ALTER TABLE `payment_cat`
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `system_settings`
@@ -226,13 +256,13 @@ ALTER TABLE `system_settings`
 -- AUTO_INCREMENT for table `tenants`
 --
 ALTER TABLE `tenants`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

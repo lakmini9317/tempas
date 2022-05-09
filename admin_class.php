@@ -115,7 +115,7 @@ Class Action {
 	}
 	function signup(){
 		extract($_POST);
-		$data = " name = '".$firstname.' '.$lastname."' ";
+		$data = " name = '".$firstname."' ";
 		$data .= ", username = '$email' ";
 		$data .= ", password = '".md5($password)."' ";
 		$chk = $this->db->query("SELECT * FROM users where username = '$email' ")->num_rows;
@@ -153,7 +153,7 @@ Class Action {
 	}
 	function update_account(){
 		extract($_POST);
-		$data = " name = '".$firstname.' '.$lastname."' ";
+		$data = " name = '".$firstname."' ";
 		$data .= ", username = '$email' ";
 		if(!empty($password))
 		$data .= ", password = '".md5($password)."' ";
@@ -294,15 +294,15 @@ Class Action {
 		$data .= ", fileno = '$fileno' ";
 		$data .= ", procode = '$procode' ";
 		$data .= ", cuscode = '$cuscode' ";
-		$data .= ", noc = '$noc' ";
+		// $data .= ", noc = '$noc' ";
 		$data .= ", privadd = '$privadd' ";
-		$data .= ", premadd = '$premadd' ";
+		// $data .= ", premadd = '$premadd' ";
 		$data .= ", extent = '$extent' ";
 		$data .= ", planno = '$planno' ";
 		$data .= ", lotno = '$lotno' ";
 		$data .= ", allodate = '$allodate' ";
 		$data .= ", phyhodate = '$phyhodate' ";
-		$data .= ", alloperiod = '$alloperiod' ";
+		// $data .= ", alloperiod = '$alloperiod' ";
 		$data .= ", expdate = '$expdate' ";
 		$data .= ", monrent = '$monrent' ";
 		$data .= ", tax = '$tax' ";
@@ -316,8 +316,8 @@ Class Action {
 		$data .= ", rrdav = '$rrdav' ";
 
 		$data .= ", firstname = '$firstname' ";
-		$data .= ", lastname = '$lastname' ";
-		$data .= ", middlename = '$middlename' ";
+		// $data .= ", lastname = '$lastname' ";
+		// $data .= ", middlename = '$middlename' ";
 		$data .= ", email = '$email' ";
 		$data .= ", contact = '$contact' ";
 		$data .= ", house_id = '$house_id' ";
@@ -341,7 +341,7 @@ Class Action {
 	function get_tdetails(){
 		extract($_POST);
 		$data =array();
-		$tenants =$this->db->query("SELECT t.*,concat(t.lastname,', ',t.firstname,' ',t.middlename) as name,h.house_no,h.price FROM tenants t inner join houses h on h.id = t.house_id where t.id = {$id} ");
+		$tenants =$this->db->query("SELECT t.*,concat(t.firstname) as name,h.house_no,h.price FROM tenants t inner join houses h on h.id = t.house_id where t.id = {$id} ");
 		foreach($tenants->fetch_array() as $k => $v){
 			if(!is_numeric($k)){
 				$$k = $v;
