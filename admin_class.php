@@ -294,15 +294,12 @@ Class Action {
 		$data .= ", fileno = '$fileno' ";
 		$data .= ", procode = '$procode' ";
 		$data .= ", cuscode = '$cuscode' ";
-		// $data .= ", noc = '$noc' ";
 		$data .= ", privadd = '$privadd' ";
-		// $data .= ", premadd = '$premadd' ";
 		$data .= ", extent = '$extent' ";
 		$data .= ", planno = '$planno' ";
 		$data .= ", lotno = '$lotno' ";
 		$data .= ", allodate = '$allodate' ";
 		$data .= ", phyhodate = '$phyhodate' ";
-		// $data .= ", alloperiod = '$alloperiod' ";
 		$data .= ", expdate = '$expdate' ";
 		$data .= ", monrent = '$monrent' ";
 		$data .= ", tax = '$tax' ";
@@ -316,8 +313,6 @@ Class Action {
 		$data .= ", rrdav = '$rrdav' ";
 
 		$data .= ", firstname = '$firstname' ";
-		// $data .= ", lastname = '$lastname' ";
-		// $data .= ", middlename = '$middlename' ";
 		$data .= ", email = '$email' ";
 		$data .= ", contact = '$contact' ";
 		$data .= ", house_id = '$house_id' ";

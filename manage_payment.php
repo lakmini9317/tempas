@@ -25,12 +25,13 @@ foreach($qry->fetch_array() as $k => $val){
             </select>
         </div>
         <div class="form-group" id="details">
-            
+            <label for="" class="control-label">Receipt: </label>
+            <input type="text" class="form-control" name="invoice"  value="<?php echo isset($invoice) ? $invoice :'' ?>" >
         </div>
 
         <div class="form-group">
-            <label for="" class="control-label">Invoice: </label>
-            <input type="text" class="form-control" name="invoice"  value="<?php echo isset($invoice) ? $invoice :'' ?>" >
+            <label for="" class="control-label">Receipt Date: </label>
+			<input type="date" class="form-control" name="invoicedate"  value="<?php echo isset($invoicedate) ? date("Y-m-d",strtotime($invoicedate)) :'' ?>" >
         </div>
         <div class="form-group">
             <label for="" class="control-label">Amount Paid: </label>
