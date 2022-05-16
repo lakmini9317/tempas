@@ -30,7 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `categories` (
   `id` int NOT NULL,
   `name` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `categories`
@@ -52,7 +51,7 @@ CREATE TABLE `houses` (
   `category_id` int NOT NULL,
   `description` text NOT NULL,
   `price` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
 
 --
 -- Dumping data for table `houses`
@@ -78,7 +77,7 @@ CREATE TABLE `payments` (
   `invoice` varchar(50) NOT NULL,
   `invoicedate` date NOT NULL,
   `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
 
 --
 -- Dumping data for table `payments`
@@ -99,7 +98,7 @@ INSERT INTO `payments` (`id`, `tenant_id`, `amount`, `invoice`, `invoicedate`, `
 CREATE TABLE `payment_cat` (
   `id` int NOT NULL,
   `name` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
 
 --
 -- Dumping data for table `payment_cat`
@@ -126,7 +125,7 @@ CREATE TABLE `system_settings` (
   `contact` varchar(20) NOT NULL,
   `cover_img` text NOT NULL,
   `about_content` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
 
 --
 -- Dumping data for table `system_settings`
@@ -147,7 +146,7 @@ CREATE TABLE `tenants` (
   `fileno` varchar(50) NOT NULL,
   `procode` varchar(50) NOT NULL,
   `cuscode` varchar(50) NOT NULL,
-  `privadd` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `privadd` varchar(500)  NOT NULL,
   `extent` varchar(20) NOT NULL,
   `planno` varchar(25) NOT NULL,
   `lotno` varchar(50) NOT NULL,
@@ -170,7 +169,7 @@ CREATE TABLE `tenants` (
   `house_id` int NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1 = active, 0= inactive',
   `date_in` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
 
 --
 -- Dumping data for table `tenants`
@@ -193,7 +192,7 @@ CREATE TABLE `users` (
   `username` varchar(200) NOT NULL,
   `password` text NOT NULL,
   `type` tinyint(1) NOT NULL DEFAULT '2' COMMENT '1=Admin,2=Staff'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
 
 --
 -- Dumping data for table `users`
