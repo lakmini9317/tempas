@@ -311,7 +311,6 @@ Class Action {
 		$data .= ", damnt = '$damnt' ";
 		$data .= ", oic = '$oic' ";
 		$data .= ", rrdav = '$rrdav' ";
-
 		$data .= ", firstname = '$firstname' ";
 		$data .= ", email = '$email' ";
 		$data .= ", contact = '$contact' ";
@@ -360,6 +359,25 @@ Class Action {
 		return json_encode($data);
 	}
 	
+	function save_payment2(){
+		extract($_POST);
+		$data = " tenant_id = '$tenant_id' ";
+		$data .= ", amount = '$amount' ";
+		$data .= ", invoice = '$invoice' ";
+		$data .= ", invoicedate = '$invoicedate' ";
+
+		if(empty($id)){
+				
+			$save = $this->db->query("INSERT INTO payments set $data");
+		}else{
+			$save = $this->db->query("UPDATE payments set $data where id = $id");
+		}		
+
+		if($save){
+			return 1;
+		}
+	}
+
 	function save_payment(){
 		extract($_POST);
 		$data = "";
