@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2022 at 08:26 AM
--- Server version: 8.0.27
--- PHP Version: 7.4.28
+-- Generation Time: May 31, 2022 at 03:29 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `categories` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `categories`
@@ -38,7 +38,73 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`) VALUES
 (1, 'Ongoing'),
-(2, 'Old');
+(2, 'Old'),
+(27, 'test');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ctenants`
+--
+
+CREATE TABLE `ctenants` (
+  `id` int(11) NOT NULL,
+  `agref` varchar(20) NOT NULL,
+  `fileno` varchar(50) NOT NULL,
+  `procode` varchar(50) NOT NULL,
+  `cuscode` varchar(50) NOT NULL,
+  `privadd` varchar(500) NOT NULL,
+  `premisadd` varchar(500) NOT NULL,
+  `extent` varchar(20) NOT NULL,
+  `planno` varchar(25) NOT NULL,
+  `lotno` varchar(50) NOT NULL,
+  `allodate` date NOT NULL,
+  `phyhodate` date NOT NULL,
+  `peridalloc` varchar(500) NOT NULL,
+  `expdate` date NOT NULL,
+  `monrent` float NOT NULL,
+  `tax` int(11) NOT NULL,
+  `secudep` int(11) NOT NULL,
+  `secureceipt` varchar(50) NOT NULL,
+  `intrst` int(11) NOT NULL,
+  `apprv` varchar(50) NOT NULL,
+  `dperiod` varchar(50) NOT NULL,
+  `duamnt` int(11) NOT NULL,
+  `oic` varchar(100) NOT NULL,
+  `allocval` int(20) NOT NULL,
+  `1rnp` varchar(100) NOT NULL,
+  `1rnv` int(20) NOT NULL,
+  `2rnp` varchar(100) NOT NULL,
+  `2rnv` int(20) NOT NULL,
+  `3rnp` varchar(100) NOT NULL,
+  `3rnv` int(20) NOT NULL,
+  `4rnp` varchar(100) NOT NULL,
+  `4rnv` int(20) NOT NULL,
+  `5rnp` varchar(100) NOT NULL,
+  `5rnv` int(20) NOT NULL,
+  `6rnp` varchar(100) NOT NULL,
+  `6rnv` int(20) NOT NULL,
+  `7rnp` varchar(100) NOT NULL,
+  `7rnv` int(20) NOT NULL,
+  `8rnp` varchar(100) NOT NULL,
+  `8rnv` int(20) NOT NULL,
+  `9rnp` varchar(100) NOT NULL,
+  `9rnv` int(20) NOT NULL,
+  `10rnp` varchar(100) NOT NULL,
+  `10rnv` int(20) NOT NULL,
+  `11rnp` varchar(100) NOT NULL,
+  `11rnv` int(20) NOT NULL,
+  `12rnp` varchar(100) NOT NULL,
+  `12rnv` int(20) NOT NULL,
+  `13rnp` varchar(100) NOT NULL,
+  `13rnv` int(20) NOT NULL,
+  `firstname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `contact` varchar(50) NOT NULL,
+  `house_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 = active, 0= inactive',
+  `date_in` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -47,12 +113,12 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `houses` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `house_no` varchar(50) NOT NULL,
-  `category_id` int NOT NULL,
+  `category_id` int(11) NOT NULL,
   `description` text NOT NULL,
   `price` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `houses`
@@ -72,13 +138,13 @@ INSERT INTO `houses` (`id`, `house_no`, `category_id`, `description`, `price`) V
 --
 
 CREATE TABLE `payments` (
-  `id` int NOT NULL,
-  `tenant_id` int NOT NULL,
+  `id` int(11) NOT NULL,
+  `tenant_id` int(11) NOT NULL,
   `amount` float NOT NULL,
   `invoice` varchar(50) NOT NULL,
   `invoicedate` date NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
+  `date_created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payments`
@@ -97,9 +163,9 @@ INSERT INTO `payments` (`id`, `tenant_id`, `amount`, `invoice`, `invoicedate`, `
 --
 
 CREATE TABLE `payment_cat` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `payment_cat`
@@ -120,13 +186,13 @@ INSERT INTO `payment_cat` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `system_settings` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `email` varchar(200) NOT NULL,
   `contact` varchar(20) NOT NULL,
   `cover_img` text NOT NULL,
   `about_content` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `system_settings`
@@ -142,12 +208,12 @@ INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `a
 --
 
 CREATE TABLE `tenants` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `agref` varchar(20) NOT NULL,
   `fileno` varchar(50) NOT NULL,
   `procode` varchar(50) NOT NULL,
   `cuscode` varchar(50) NOT NULL,
-  `privadd` varchar(500)  NOT NULL,
+  `privadd` varchar(500) NOT NULL,
   `extent` varchar(20) NOT NULL,
   `planno` varchar(25) NOT NULL,
   `lotno` varchar(50) NOT NULL,
@@ -155,22 +221,22 @@ CREATE TABLE `tenants` (
   `phyhodate` date NOT NULL,
   `expdate` date NOT NULL,
   `monrent` float NOT NULL,
-  `tax` int NOT NULL,
-  `secudep` int NOT NULL,
+  `tax` int(11) NOT NULL,
+  `secudep` int(11) NOT NULL,
   `secureceipt` varchar(50) NOT NULL,
-  `intrst` int NOT NULL,
+  `intrst` int(11) NOT NULL,
   `apprv` varchar(50) NOT NULL,
   `dperiod` varchar(50) NOT NULL,
-  `damnt` int NOT NULL,
+  `damnt` int(11) NOT NULL,
   `oic` varchar(100) NOT NULL,
   `rrdav` varchar(100) NOT NULL,
   `firstname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `contact` varchar(50) NOT NULL,
-  `house_id` int NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1 = active, 0= inactive',
+  `house_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 = active, 0= inactive',
   `date_in` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tenants`
@@ -188,12 +254,12 @@ INSERT INTO `tenants` (`id`, `agref`, `fileno`, `procode`, `cuscode`, `privadd`,
 --
 
 CREATE TABLE `users` (
-  `id` int NOT NULL,
+  `id` int(11) NOT NULL,
   `name` text NOT NULL,
   `username` varchar(200) NOT NULL,
   `password` text NOT NULL,
-  `type` tinyint(1) NOT NULL DEFAULT '2' COMMENT '1=Admin,2=Staff'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4  ;
+  `type` tinyint(1) NOT NULL DEFAULT 2 COMMENT '1=Admin,2=Staff'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -202,7 +268,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `type`) VALUES
 (1, 'Administrator', 'admin', '0192023a7bbd73250516f069df18b500', 1),
 (2, 'userx', 'user', 'c93ccd78b2076528346216b3b2f701e6', 2),
-(3, 'land', 'land', '0192023a7bbd73250516f069df18b500', 2);
+(3, 'land', 'land', 'deb2c9b4e62ecf6f04f96811b7a01d3b', 2);
 
 --
 -- Indexes for dumped tables
@@ -212,6 +278,12 @@ INSERT INTO `users` (`id`, `name`, `username`, `password`, `type`) VALUES
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ctenants`
+--
+ALTER TABLE `ctenants`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -258,43 +330,49 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT for table `ctenants`
+--
+ALTER TABLE `ctenants`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `houses`
 --
 ALTER TABLE `houses`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `payment_cat`
 --
 ALTER TABLE `payment_cat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `system_settings`
 --
 ALTER TABLE `system_settings`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `tenants`
 --
 ALTER TABLE `tenants`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
