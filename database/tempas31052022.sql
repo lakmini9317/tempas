@@ -69,7 +69,7 @@ CREATE TABLE `ctenants` (
   `secudep` int(11) NOT NULL,
   `secureceipt` varchar(50) NOT NULL,
   `intrst` int(11) NOT NULL,
-  `apprv` varchar(50) NOT NULL,
+  `apprp` varchar(50) NOT NULL,
   `duperiod` varchar(50) NOT NULL,
   `duamnt` int(11) NOT NULL,
   `oic` varchar(100) NOT NULL,
