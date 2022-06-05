@@ -13,13 +13,14 @@
 	<div class="row">
 		<div class="card col-lg-12">
 			<div class="card-body">
-				<table class="table-striped table-bordered col-md-12">
+				<table class="table-hovered table-striped table-bordered  col-md-12">
 			<thead>
 				<tr>
 					<th class="text-center">#</th>
                     <th class="text-center">Customer Code</th>
 					<th class="text-center">Project Name</th>
-					<th class="text-center">Premises Code</th>
+					<th class="text-center">Location</th>
+					<th class="text-center">Customer Name</th>
 					<th class="text-center">Due Amount</th>
 					<th class="text-center">Expirary Date</th>
 				</tr>
@@ -42,9 +43,11 @@
 				 	<td>
 				 		<?php echo ucwords($row['projnm']) ?>
 				 	</td>
-				 	
 				 	<td>
 				 		<?php echo $row['premisadd'] ?>
+				 	</td>
+				 	<td>
+				 		<?php echo $row['firstname'] ?>
 				 	</td>
 				 	<td>
 				 		<?php echo $row['duamnt'] ?>
