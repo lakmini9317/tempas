@@ -243,7 +243,7 @@ Class Action {
 	}
 
 
-	function save_paycategory(){
+	function save_paycategory(){ 
 		extract($_POST);
 		$data = " name = '$name' ";
 			if(empty($id)){

@@ -81,7 +81,7 @@
 	})
 
 	$('.view_ctenant').click(function(){
-		uni_modal("View Details","view_tenant.php?id="+$(this).attr('data-id'),"large")
+		uni_modal("Temporary Allocation Details","view_tenant.php?id="+$(this).attr('data-id'),"large")
 		
 	})
 
