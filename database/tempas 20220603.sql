@@ -100,7 +100,12 @@ CREATE TABLE `ctenants` (
   `rnp12` varchar(25) CHARACTER SET utf8 DEFAULT NULL,
   `rnv12` int(11) DEFAULT NULL,
   `rnp13` varchar(25) CHARACTER SET utf8 DEFAULT NULL,
-  `rnv13` int(11) DEFAULT NULL
+  `rnv13` int(11) DEFAULT NULL,
+  `email` varchar(100) NOT NULL,
+  `contact` varchar(50) NOT NULL,
+  `house_id` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 1 COMMENT '1 = active, 0= inactive',
+  `date_in` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
