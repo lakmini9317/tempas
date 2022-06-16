@@ -37,14 +37,15 @@ header("location:index.php?page=home");
 	main#main{
 		width:100%;
 		height: calc(100%);
-		background:white;
+		/* background:white; */
+		
 	}
 	#login-right{
 		position: absolute;
 		right:0;
 		width:40%;
 		height: calc(100%);
-		background:white;
+		background:#99d1df;
 		display: flex;
 		align-items: center;
 	}
@@ -56,58 +57,79 @@ header("location:index.php?page=home");
 		background:#59b6ec61;
 		display: flex;
 		align-items: center;
-		background: url(assets/uploads/bg.webp);
+		background: url(assets/uploads/bg.jpg);
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	}
-	#login-right .card{
-		margin: auto;
-		z-index: 1
-	}
+		#login-right .card{
+			margin: auto;
+			z-index: 1
+		}
 	.logo {
-    margin: auto;
-    font-size: 8rem;
-    background: white;
-    padding: .5em 0.7em;
-    border-radius: 50% 50%;
-    color: #000000b3;
-    z-index: 10;
-}
-div#login-right::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100%);
-    height: calc(100%);
-    background: #7be1c52e;
-}
+		margin: auto;
+		font-size: 8rem;
+		background: white;
+		padding: .5em 0.7em;
+		border-radius: 50% 50%;
+		color: #000000b3;
+		z-index: 10;
+	}
+	div#login-right::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: calc(100%);
+		height: calc(100%);
+		background-color:transparent;
+	}
+
+	.card{
+		border-radius:30px 1px 30px 1px;
+		background-color:transparent;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	}
+
+	#username , #password{
+		border: 2px solid #2e748e;
+	}
+
+	.btn{
+		color:white;
+		background-color:#06485e;
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	}
+
+	.btn:hover{
+		background-color:#2e748e;
+		color:white;
+	}
 
 </style>
 
 <body >
 
 
-  <main id="main" class=" bg-light">
-  		<div id="login-left" class="bg-dark">
+  <main id="main" >
+  		<div id="login-left" >
   		</div>
 
-  		<div id="login-right" class="bg-light">
+  		<div id="login-right" >
   			<div class="w-100">
-			<h4 class="text-orange text-center"><b><?php echo $_SESSION['system']['name'] ?></b></h4>
+			<h3 class="text-orange text-center"><b><?php echo $_SESSION['system']['name'] ?></b></h3>
 			<br>
-  			<div class="card col-md-8" style="border-radius:30px 1px 30px 1px;">
+  			<div class="card col-md-8" >
   				<div class="card-body" >
   					<form id="login-form" >
   						<div class="form-group">
-  							<label for="username" class="control-label">Username</label>
+  							<label for="username" class="control-label" style="color:#06485e;">Username</label>
   							<input type="text" id="username" name="username" class="form-control">
   						</div>
   						<div class="form-group">
-  							<label for="password" class="control-label">Password</label>
+  							<label for="password" class="control-label" style="color:#06485e;">Password</label>
   							<input type="password" id="password" name="password" class="form-control">
   						</div>
-  						<center><button class="btn-sm btn-block btn-wave col-md-4 btn-primary">Login</button></center>
+  						<center><button class="btn col-md-4" >Login</button></center>
   					</form>
   				</div>
   			</div>
