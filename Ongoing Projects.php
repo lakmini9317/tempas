@@ -60,7 +60,9 @@
                      <?php echo $row['expdate'] ?>
 				 	</td>
 					<td class="text-center">
-						<button class="btn btn-sm btn-outline-primary view_ctenant" type="button" data-id="<?php echo $row['id'] ?>" > View<i class="fa-solid fa-eye"></i></button>
+						<button class="btn btn-sm btn-outline-primary view_ctenant" type="button" data-id="<?php echo $row['id'] ?>" > View
+						<!-- <i class="fa-solid fa-eye"></i> -->
+					</button>
 						<!-- <button class="btn btn-sm btn-outline-primary edit_ctenant" type="button" data-id="<?php echo $row['id'] ?>" ><i class="fas fa-edit"></i></button>
 						<button class="btn btn-sm btn-outline-danger delete_ctenant" type="button" data-id="<?php echo $row['id'] ?>"><i class="fa-solid fa-trash-can"></i></button> -->
 					</td> 

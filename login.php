@@ -32,6 +32,7 @@ header("location:index.php?page=home");
 		width: 100%;
 	    height: calc(100%);
 	    /*background: #007bff;*/
+		
 	}
 	main#main{
 		width:100%;
@@ -57,7 +58,7 @@ header("location:index.php?page=home");
 		align-items: center;
 		background: url(assets/uploads/bg.webp);
 	    background-repeat: no-repeat;
-	    background-size: cover;*/
+	    background-size: cover;
 	}
 	#login-right .card{
 		margin: auto;
@@ -79,12 +80,12 @@ div#login-right::before {
     left: 0;
     width: calc(100%);
     height: calc(100%);
-    background: #7be1c52e;*/
+    background: #7be1c52e;
 }
 
 </style>
 
-<body>
+<body >
 
 
   <main id="main" class=" bg-light">
@@ -95,9 +96,8 @@ div#login-right::before {
   			<div class="w-100">
 			<h4 class="text-orange text-center"><b><?php echo $_SESSION['system']['name'] ?></b></h4>
 			<br>
-			<br>
-  			<div class="card col-md-8">
-  				<div class="card-body">
+  			<div class="card col-md-8" style="border-radius:30px 1px 30px 1px;">
+  				<div class="card-body" >
   					<form id="login-form" >
   						<div class="form-group">
   							<label for="username" class="control-label">Username</label>
