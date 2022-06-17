@@ -270,16 +270,24 @@ Class Action {
 		$data .= ", price = '$price' ";
 		$chk = $this->db->query("SELECT * FROM houses where house_no = '$house_no' ")->num_rows;
 		if($chk > 0 ){
-			return 2;
-			exit;
+			// return 2;
+			// exit;
+			$update = $this->db->query("UPDATE houses set $data where id = $id");
 		}
-			if(empty($id)){
+			
+		if(empty($id)){
 				$save = $this->db->query("INSERT INTO houses set $data");
 			}else{
 				$save = $this->db->query("UPDATE houses set $data where id = $id");
 			}
-		if($save)
+
+		if($save){
 			return 1;
+		}
+		else if($update){
+			return 1;
+		}
+			
 	}
 	function delete_house(){
 		extract($_POST);
