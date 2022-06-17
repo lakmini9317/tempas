@@ -19,12 +19,14 @@ ob_end_flush();
   <title><?php echo $_SESSION['system']['name'] ?></title>
  	
 
-<?php include('./header.php'); ?>
-<?php 
-if(isset($_SESSION['login_id']))
-header("location:index.php?page=home");
+	<?php include('./header.php'); ?>
+	<?php 
+	if(isset($_SESSION['login_id']))
+	header("location:index.php?page=home");
 
-?>
+	?>
+
+	
 
 </head>
 <style>
@@ -86,7 +88,7 @@ header("location:index.php?page=home");
 
 	.card{
 		border-radius:30px 1px 30px 1px;
-		background-color:transparent;
+		background-color:rgba(201,228,235,0.5);
 		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 	}
 
