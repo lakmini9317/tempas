@@ -63,10 +63,10 @@ ob_end_flush();
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	}
-		#login-right .card{
-			margin: auto;
-			z-index: 1
-		}
+	#login-right .card{
+		margin: auto;
+		z-index: 1
+	}
 	.logo {
 		margin: auto;
 		font-size: 8rem;
