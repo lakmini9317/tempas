@@ -242,11 +242,9 @@ Class Action {
 		}
 	}
 
-
 	function save_paycategory(){ 
 		extract($_POST);
 		$data = " name = '$name' ";
-
 			if(empty($id)){
 				$save = $this->db->query("INSERT INTO payment_cat set $data");
 			}else{
@@ -255,7 +253,7 @@ Class Action {
 		if($save)
 			return 1;
 	}
-	
+
 	function delete_paycategory(){
 		extract($_POST);
 		$delete = $this->db->query("DELETE FROM payment_cat where id = ".$id);
