@@ -27,7 +27,7 @@
 									<th class="text-center">#</th>
 									<th class="">Name</th>
 									<th class="">Land Rented</th>
-									<th class="">Monthly Rate</th>
+									<th class="">Monthly Rental</th>
 									<th class="">Outstanding Balance</th>
 									<th class="">Last Payment</th>
 									<th class="text-center">Action</th>
