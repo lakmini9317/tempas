@@ -17,7 +17,7 @@ foreach($qry->fetch_array() as $k => $val){
                 <option value=""></option>
 
             <?php 
-            $tenant = $conn->query("SELECT *,concat(firstname) as name FROM tenants where status = 1 order by name asc");
+            $tenant = $conn->query("SELECT *,concat(lirstname) as name FROM tenants where status = 1 order by name asc");
             while($row=$tenant->fetch_assoc()):
             ?>
             <option value="<?php echo $row['id'] ?>" <?php echo isset($tenant_id) && $tenant_id == $row['id'] ? 'selected' : '' ?>><?php echo ucwords($row['name']) ?></option>
@@ -25,13 +25,12 @@ foreach($qry->fetch_array() as $k => $val){
             </select>
         </div>
         <div class="form-group" id="details">
-            <label for="" class="control-label">Receipt: </label>
-            <input type="text" class="form-control" name="invoice"  value="<?php echo isset($invoice) ? $invoice :'' ?>" >
+            
         </div>
 
         <div class="form-group">
-            <label for="" class="control-label">Receipt Date: </label>
-			<input type="date" class="form-control" name="invoicedate"  value="<?php echo isset($invoicedate) ? date("Y-m-d",strtotime($invoicedate)) :'' ?>" >
+            <label for="" class="control-label">Invoice: </label>
+            <input type="text" class="form-control" name="invoice"  value="<?php echo isset($invoice) ? $invoice :'' ?>" >
         </div>
         <div class="form-group">
             <label for="" class="control-label">Amount Paid: </label>
@@ -41,7 +40,7 @@ foreach($qry->fetch_array() as $k => $val){
     </form>
 </div>
 <div id="details_clone" style="display: none">
-    <div class='d'>  
+    <div class='d'>
         <large><b>Details</b></large>
         <hr>
         <p>Tenant: <b class="tname"></b></p>
@@ -53,8 +52,6 @@ foreach($qry->fetch_array() as $k => $val){
         <hr>
     </div>
 </div>
-
-
 <script>
     $(document).ready(function(){
         if('<?php echo isset($id)? 1:0 ?>' == 1)

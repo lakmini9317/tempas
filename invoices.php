@@ -25,10 +25,10 @@
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
-									<th class="text-center">Date</th>
-									<th class="text-center">Tenant</th>
-									<th class="text-center">Receipt</th>
-									<th class="text-center">Amount</th>
+									<th class="">Date</th>
+									<th class="">Tenant</th>
+									<th class="">Invoice</th>
+									<th class="">Amount</th>
 									<th class="text-center">Action</th>
 								</tr>
 							</thead>
@@ -69,10 +69,6 @@
 	</div>	
 
 </div>
-
-<?php
-        include "footer.php";                
-    ?>
 <style>
 	
 	td{
@@ -92,7 +88,7 @@
 	})
 	
 	$('#new_invoice').click(function(){
-		uni_modal("New Receipt","manage_payment.php","mid-large")
+		uni_modal("New invoice","manage_payment.php","mid-large")
 		
 	})
 	$('.edit_invoice').click(function(){
