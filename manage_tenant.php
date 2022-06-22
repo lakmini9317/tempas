@@ -194,6 +194,7 @@ foreach($qry->fetch_array() as $k => $val){
 		
 	</form>
 </div>
+	
 <script>
 	
 	$('#manage-tenant').submit(function(e){

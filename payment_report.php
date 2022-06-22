@@ -99,6 +99,9 @@ $month_of = isset($_GET['month_of']) ? $_GET['month_of'] : date('Y-m');
 		</div>
 	</div>
 </div>
+<?php
+        include "footer.php";                
+    ?>
 <script>
 	$('#print').click(function(){
 		var _style = $('noscript').clone()

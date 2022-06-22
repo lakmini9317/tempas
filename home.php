@@ -114,7 +114,11 @@
             </div>      			
         </div>
     </div>
+   
 </div>
+    <?php
+        include "footer.php";                
+    ?>
 <script>
 	$('#manage-records').submit(function(e){
         e.preventDefault()

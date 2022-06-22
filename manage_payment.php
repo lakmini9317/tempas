@@ -53,6 +53,8 @@ foreach($qry->fetch_array() as $k => $val){
         <hr>
     </div>
 </div>
+
+
 <script>
     $(document).ready(function(){
         if('<?php echo isset($id)? 1:0 ?>' == 1)

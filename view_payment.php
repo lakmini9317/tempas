@@ -63,6 +63,7 @@ $outstanding = $payable - $paid;
 		</div>
 	</div>
 </div>
+
 <style>
 	#details p {
 		margin: unset;

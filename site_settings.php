@@ -42,6 +42,10 @@ if($qry->num_rows > 0){
 			</form>
 		</div>
 	</div>
+
+	<?php
+        include "footer.php";                
+    ?>
 	<style>
 	img#cimg{
 		max-height: 10vh;

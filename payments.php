@@ -76,6 +76,7 @@
 	</div>	
 
 </div>
+<?php  include "footer.php";  ?>
 <style>
 	
 	td{

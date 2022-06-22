@@ -94,6 +94,9 @@
 		</div>
 	</div>
 </div>
+	<?php
+        include "footer.php";                
+    ?>
 <script>
 	$('#print').click(function(){
 		var _style = $('noscript').clone()

@@ -37,3 +37,6 @@ include 'db_connect.php';
 		</div>
 	</div>
 </div>
+<?php
+        include "footer.php";                
+    ?>
