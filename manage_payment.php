@@ -24,8 +24,14 @@ foreach($qry->fetch_array() as $k => $val){
             <?php endwhile; ?>
             </select>
         </div>
+
         <div class="form-group" id="details">
-            <label for="" class="control-label">Receipt: </label>
+            <label for="" class="control-label"> </label>
+        </div>
+
+
+        <div class="form-group" >
+            <label for="" class="control-label">Receipt No: </label>
             <input type="text" class="form-control" name="invoice"  value="<?php echo isset($invoice) ? $invoice :'' ?>" >
         </div>
 
