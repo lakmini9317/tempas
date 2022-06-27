@@ -33,8 +33,8 @@
 
 	
     <footer class="bg-light text-center text-lg-start" >  
-        <div class="text-center p-3 " style="background-color: rgba(0, 0, 0, 0.2);" >
-        Copyright © 2022 <b style="color:blue;">UDA ITS.</b> All Rights Reserved. 
+        <div class="text-left p-3 " style="background-color: rgba(0, 0, 0, 0.2);" >
+        Copyright © <?php echo date("Y"); ?> <b style="color:blue;">UDA ITS.</b> All Rights Reserved. 
         </div>  
     </footer>
 
