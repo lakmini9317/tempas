@@ -9,7 +9,7 @@
 				<form action="" id="manage-category">
 					<div class="card">
 						<div class="card-header">
-								Land Category Form
+								Land Category 
 						</div>
 						<div class="card-body">
 								<input type="hidden" name="id">
@@ -36,7 +36,7 @@
 								Payment Type 
 						</div>
 						<div class="card-body">
-								<input type="hidden" name="idp">
+								<input type="hidden" name="id">
 								<div class="form-group">
 									<label class="control-label">Name</label>
 									<input type="text" class="form-control" name="name" required>
@@ -120,7 +120,7 @@
 								<tr>
 									<td class="text-center"><?php echo $i++ ?></td>
 									<td class="">
-										<p><b><?php echo $row['name'] ?></b></p>
+										<p><b><?php echo $row['name'] ?></b>  </p>
 									</td>
 									<td class="text-center">
 										<button class="btn btn-sm btn-primary edit_paycategory" type="button" data-id="<?php echo $row['id'] ?>"  data-name="<?php echo $row['name'] ?>" >Edit</button>
@@ -178,7 +178,7 @@
 				}
 			}
 		})
-	})
+	})  
 
 
 	$('#manage-payment-category').submit(function(e){
