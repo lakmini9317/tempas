@@ -45,7 +45,7 @@
 
 	</form>
 </div>
-<script>
+<script>  
 	
 	$('#manage-user').submit(function(e){
 		e.preventDefault();

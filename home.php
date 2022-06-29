@@ -37,7 +37,9 @@
 
     .card{
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        
     }
+
 </style>
 
 <div class="containe-fluid">
@@ -51,7 +53,7 @@
 
                         <div class="col-md-4 mb-3">
                             <div class="card" style="border:1px solid #3e4444;">
-                                <div class="card-body " style="background-color:#3e4444">
+                                <div class="card-body " style="background-color:#3e4444;">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-home "></i></span>
                                         <h3 style="font-family:Sans-serif;">
@@ -60,10 +62,10 @@
                                         <p>Total Lands</p>
                                     </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer"  style="background-color:rgba(62,68,68,0.7)">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <a href="index.php?page=houses" class="text-primary float-right">View List <span class="fa fa-angle-right"></span></a>
+                                            <a href="index.php?page=houses" class="text-white float-right">View List <span class="fa fa-angle-right"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -71,8 +73,8 @@
                         </div>
 
                         <div class="col-md-4 mb-3">
-                            <div class="card " style="border:1px solid #82b74b;">
-                                <div class="card-body " style="background-color:#82b74b">
+                            <div class="card " style="border:1px solid #76a14a;">
+                                <div class="card-body " style="background-color:#76a14a">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-user-friends "></i></span>
                                         <h3 style="font-family:Sans-serif;">
@@ -81,10 +83,10 @@
                                         <p>Total Tenants</p>
                                     </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" style="background-color:rgba(118, 161, 74,0.7)">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <a href="index.php?page=tenants" class="text-primary float-right">View List <span class="fa fa-angle-right"></span></a>
+                                            <a href="index.php?page=tenants" class="text-white float-right">View List <span class="fa fa-angle-right"></span></a>
                                         </div>
                                     </div>
                                 </div>
@@ -108,10 +110,10 @@
                                         <p>Payments This Month</p>
                                     </div>
                                 </div>
-                                <div class="card-footer">
+                                <div class="card-footer" style="background-color:rgba(64,93,39,0.7)">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <a href="index.php?page=invoices" class="text-primary float-right">View Payments <span class="fa fa-angle-right"></span></a>
+                                            <a href="index.php?page=invoices" class="text-white float-right">View Payments <span class="fa fa-angle-right"></span></a>
                                         </div>
                                     </div>
                                 </div>
