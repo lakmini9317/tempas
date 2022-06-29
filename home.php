@@ -34,6 +34,10 @@
 		max-height: calc(100%)!important;
 		max-width: calc(100%)!important;
 	}
+
+    .card{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
 </style>
 
 <div class="containe-fluid">
@@ -44,15 +48,16 @@
                     <?php echo "Welcome back ". $_SESSION['login_name']."!"  ?>
                     <hr>
                     <div class="row">
+
                         <div class="col-md-4 mb-3">
                             <div class="card" style="border:1px solid #3e4444;">
                                 <div class="card-body " style="background-color:#3e4444">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-home "></i></span>
-                                        <h4><b>
+                                        <h3 style="font-family:Sans-serif;">
                                             <?php echo $conn->query("SELECT * FROM houses")->num_rows ?>
-                                        </b></h4>
-                                        <p><b>Total Lands</b></p>
+                                        </h3>
+                                        <p>Total Lands</p>
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -64,15 +69,16 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-md-4 mb-3">
                             <div class="card " style="border:1px solid #82b74b;">
                                 <div class="card-body " style="background-color:#82b74b">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-user-friends "></i></span>
-                                        <h4><b>
+                                        <h3 style="font-family:Sans-serif;">
                                             <?php echo $conn->query("SELECT * FROM tenants where status = 1 ")->num_rows ?>
-                                        </b></h4>
-                                        <p><b>Total Tenants</b></p>
+                                        </h3>
+                                        <p>Total Tenants</p>
                                     </div>
                                 </div>
                                 <div class="card-footer">
@@ -84,18 +90,22 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-md-4 mb-3">
                             <div class="card " style="border:1px solid #405d27;">
                                 <div class="card-body " style="background-color:#405d27">
                                     <div class="card-body text-white">
                                         <span class="float-right summary_icon"> <i class="fa fa-file-invoice "></i></span>
-                                        <h4><b>
+                                        <h3 style="font-family:Sans-serif;">
                                             <?php 
-                                             $payment = $conn->query("SELECT sum(amount) as paid FROM payments where date(date_created) = '".date('Y-m-d')."' "); 
+                                            //  $payment = $conn->query("SELECT sum(amount) as paid FROM payments where date(date_created) = '".date('Y-m-d')."' "); 
+                                            //  echo $payment->num_rows > 0 ? number_format($payment->fetch_array()['paid'],2) : 0;
+
+                                             $payment = $conn->query("SELECT sum(amount) as paid FROM payments where  MONTH(date_created) = '".date('m')."' "); 
                                              echo $payment->num_rows > 0 ? number_format($payment->fetch_array()['paid'],2) : 0;
                                              ?>
-                                        </b></h4>
-                                        <p><b>Payments This Month</b></p>
+                                        </h3>
+                                        <p>Payments This Month</p>
                                     </div>
                                 </div>
                                 <div class="card-footer">
