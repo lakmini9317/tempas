@@ -72,7 +72,7 @@
 
 <?php
         include "footer.php";                
-    ?>
+    ?>  
 <script>
 	$('table').dataTable();
 $('#new_user').click(function(){

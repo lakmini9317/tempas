@@ -87,10 +87,12 @@ Class Action {
 		extract($_POST);
 		$data = " name = '$name' ";
 		$data .= ", username = '$username' ";
-		if(!empty($password))
-		$data .= ", password = '".md5($password)."' ";
-		$data .= ", type = '$type' ";
-		if($type == 1)
+		if(!empty($password)){
+			$data .= ", password = '".md5($password)."' ";
+			$data .= ", type = '$type' ";
+		}
+		
+		if($type == 1){
 			$establishment_id = 0;
 		$data .= ", establishment_id = '$establishment_id' ";
 		$chk = $this->db->query("Select * from users where username = '$username' and id !='$id' ")->num_rows;
@@ -98,6 +100,9 @@ Class Action {
 			return 2;
 			exit;
 		}
+
+		}
+			
 		if(empty($id)){
 			$save = $this->db->query("INSERT INTO users set ".$data);
 		}else{
