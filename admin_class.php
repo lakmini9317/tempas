@@ -15,26 +15,40 @@ Class Action {
 	    ob_end_flush();
 	}
 
-	function login(){
+	// function login(){
 		
-			extract($_POST);		
-			$qry = $this->db->query("SELECT * FROM users where username = '".$username."' and password = '".md5($password)."' ");
-			if($qry->num_rows > 0){
-				foreach ($qry->fetch_array() as $key => $value) {
-					if($key != 'password' && !is_numeric($key))
-						$_SESSION['login_'.$key] = $value;
-				}
-				if($_SESSION['login_type'] != 1){
-					foreach ($_SESSION as $key => $value) {
-						unset($_SESSION[$key]);
-					}
-					return 2 ;
-					exit;
-				}
-					return 1;
-			}else{
-				return 3;
+	// 		extract($_POST);		
+	// 		$qry = $this->db->query("SELECT * FROM users where username = '".$username."' and password = '".md5($password)."' ");
+	// 		if($qry->num_rows > 0){
+	// 			foreach ($qry->fetch_array() as $key => $value) {
+	// 				if($key != 'password' && !is_numeric($key))
+	// 					$_SESSION['login_'.$key] = $value;
+	// 			}
+	// 			if($_SESSION['login_type'] != 1){
+	// 				foreach ($_SESSION as $key => $value) {
+	// 					unset($_SESSION[$key]);
+	// 				}
+	// 				return 2 ;
+	// 				exit;
+	// 			}
+	// 				return 1;
+	// 		}else{
+	// 			return 3;
+	// 		}
+	// }
+	
+	function login(){
+		extract($_POST);		
+		$qry = $this->db->query("SELECT * FROM users where username = '".$username."' and password = '".md5($password)."' ");
+		if($qry->num_rows > 0){
+			foreach ($qry->fetch_array() as $key => $value) {
+				if($key != 'passwors' && !is_numeric($key))
+					$_SESSION['login_'.$key] = $value;
 			}
+				return 1;
+		}else{
+			return 3;
+		}
 	}
 	function login2(){
 		
@@ -100,7 +114,6 @@ Class Action {
 			return 2;
 			exit;
 		}
-
 		}
 			
 		if(empty($id)){
