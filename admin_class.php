@@ -435,4 +435,55 @@ Class Action {
 			return 1;
 		}
 	}
+
+
+	function save_ctenant(){
+		extract($_POST);
+		$data = " projnm = '$projnm' ";
+		$data .= ", agref = '$agref' ";
+		$data .= ", fileno = '$fileno' ";
+		$data .= ", procode = '$procode' ";
+		$data .= ", cuscode = '$cuscode' ";
+		$data .= ", firstname = '$firstname' ";
+		$data .= ", privadd = '$privadd' ";
+		$data .= ", premisadd = '$premisadd' ";
+		$data .= ", extent = '$extent' ";
+		$data .= ", planno = '$planno' ";
+		$data .= ", lotno = '$lotno' ";
+		$data .= ", allodate = '$allodate' ";
+		$data .= ", phyhodate = '$phyhodate' ";
+		$data .= ", peridalloc = '$peridalloc' ";
+		$data .= ", expdate = '$expdate' ";
+		$data .= ", monrent = '$monrent' ";
+		$data .= ", tax = '$tax' ";
+		$data .= ", secudep = '$secudep' ";
+		$data .= ", secureceipt = '$secureceipt' ";
+		$data .= ", intrst = '$intrst' ";
+		$data .= ", apprp = '$apprp' ";
+		$data .= ", duperiod = '$duperiod' "; 
+		$data .= ", duamnt = '$duamnt' ";
+		$data .= ", oic = '$oic' ";
+		$data .= ", allocval = '$allocval' ";		
+		$data .= ", allocpr = '$allocpr' ";
+
+		$data .= ", email = '$email' ";
+		$data .= ", contact = '$contact' ";
+		$data .= ", house_id = '$house_id' ";
+		$data .= ", status = '$status' ";
+		$data .= ", date_in = '$date_in' ";
+			if(empty($id)){
+				
+				$save = $this->db->query("INSERT INTO ctenants set $data");
+			}else{
+				$save = $this->db->query("UPDATE ctenants set $data where id = $id");
+			}
+		if($save)
+			return 1;
+	}
+
+
+
+
+
+
 }

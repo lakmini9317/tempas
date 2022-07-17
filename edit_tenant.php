@@ -1,18 +1,22 @@
 <?php 
 include 'db_connect.php'; 
 if(isset($_GET['id'])){
-$qry = $conn->query("SELECT * FROM tenants where id= ".$_GET['id']);
+$qry = $conn->query("SELECT * FROM ctenants where id= ".$_GET['id']);
 foreach($qry->fetch_array() as $k => $val){
 	$$k=$val;
 }
-}  
+}     
 ?>
 <div class="container-fluid">
-	<form action="" id="manage-tenant">
-		<!-- <input type="text" name="id" value="<?php echo isset($id) ? $id : NULL ?>"> -->
+	<form action="" id="edit-ctenant">
+	
 
 		<div style="background-color:#E5E5E5;padding:20px;border-radius:25px;">
 			<div class="row form-group">
+            <div class="col-md-4">
+					<label for="agref" class="control-label">Project Name</label>
+					<input type="text" class="form-control" name="agref"  value="<?php echo isset($projnm) ? $projnm :NULL ?>" >
+				</div>
 				<div class="col-md-4">
 					<label for="agref" class="control-label">Agreement Reference No</label>
 					<input type="text" class="form-control" name="agref"  value="<?php echo isset($agref) ? $agref :NULL ?>" >
@@ -186,23 +190,19 @@ foreach($qry->fetch_array() as $k => $val){
 	
 
 		
-
-
-
-	
-
 		
 	</form>
 </div>
-	
+
+
 <script>
 	
-	$('#manage-tenant').submit(function(e){
+	$('#edit-ctenant').submit(function(e){
 		e.preventDefault()
 		start_load()
 		$('#msg').html('')
 		$.ajax({
-			url:'ajax.php?action=save_tenant',
+			url:'ajax.php?action=save_ctenant',
 			data: new FormData($(this)[0]),
 		    cache: false,
 		    contentType: false,
@@ -225,3 +225,4 @@ foreach($qry->fetch_array() as $k => $val){
 		})
 	})
 </script>
+	

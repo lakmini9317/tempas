@@ -28,8 +28,8 @@
 			<small><i>Leave this blank if you dont want to change the password.</i></small>
 		<?php endif; ?>
 		</div>
-		<?php if(isset($meta['type']) && $meta['type'] == 3): ?>
-			<input type="hidden" name="type" value="3">
+		<?php if(isset($meta['type']) && $meta['type'] == 1): ?>
+			<input type="hidden" name="type" value="1">
 		<?php else: ?>
 		<?php if(!isset($_GET['mtype'])): ?>
 		<div class="form-group">
