@@ -5,11 +5,11 @@ if(isset($_POST['update']))
     $id = $_POST['id'];
     $projname = $_POST['projnm'];
 
-    $query = "UPDATE `ctenants` SET `projnm` = ".$projname." WHERE `ctenants`.`id` = $id";
+    $query = "UPDATE 'ctenants' SET 'projnm' = ".$projname." WHERE 'ctenants'.'id' = $id";
 
     $result = mysqli_query($conn, $query)
 
-    if($result){
+    if($result) {
         echo 'Data Updated';
     }else{
         echo 'Data Not updated';
