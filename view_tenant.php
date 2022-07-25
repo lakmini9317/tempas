@@ -43,8 +43,8 @@
                         - &nbsp;<b><?php echo $row['cuscode'] ?></b> <br>
                         - &nbsp;<b><?php echo $row['firstname'] ?></b> <br>
                         - &nbsp;<b><?php echo $row['privadd'] ?></b> <br>
-                        - &nbsp;<b></b> <br>
-                        - &nbsp;<b></b></p>
+                        - &nbsp;<b><?php echo $row['email'] ?></b> <br>
+                        - &nbsp;<b><?php echo $row['contact'] ?></b></p>
                 </div>                
             </div> 
 
