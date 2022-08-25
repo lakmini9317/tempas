@@ -19,6 +19,14 @@
 								<input type="text" class="form-control" name="house_no" required="">
 							</div>
 							<div class="form-group">
+								<label class="control-label">Sub Land No</label>
+								<input type="text" class="form-control" name="sub_land_no" >
+							</div>
+							<div class="form-group">
+								<label class="control-label">Address</label>
+								<input type="text" class="form-control" name="lnd_add" >
+							</div>
+							<div class="form-group">
 								<label class="control-label">Category</label>
 								<select name="category_id" id="" class="custom-select" required>
 									<?php 
@@ -80,12 +88,14 @@
 									<td class="text-center"><?php echo $i++ ?></td>
 									<td class="">
 										<p>Land #: <b><?php echo $row['house_no'] ?></b></p>
+										<p><small>Sub Land No: <b><?php echo $row['sub_land_no'] ?></b></small></p>
+										<p><small>Address: <b><?php echo $row['lnd_add'] ?></b></small></p>
 										<p><small>Land Type: <b><?php echo $row['cname'] ?></b></small></p>
 										<p><small>Description: <b><?php echo $row['description'] ?></b></small></p>
 										<p><small>Price: <b><?php echo number_format($row['price'],2) ?></b></small></p>
 									</td>
 									<td class="text-center">
-										<button class="btn btn-sm btn-primary edit_house" type="button" data-id="<?php echo $row['id'] ?>"  data-house_no="<?php echo $row['house_no'] ?>" data-description="<?php echo $row['description'] ?>" data-category_id="<?php echo $row['category_id'] ?>" data-price="<?php echo $row['price'] ?>" >Edit</button>
+										<button class="btn btn-sm btn-primary edit_house" type="button" data-id="<?php echo $row['id'] ?>"  data-house_no="<?php echo $row['house_no'] ?>" data-sub_land_no="<?php echo $row['sub_land_no'] ?>" data-lnd_add="<?php echo $row['lnd_add'] ?>" data-description="<?php echo $row['description'] ?>" data-category_id="<?php echo $row['category_id'] ?>" data-price="<?php echo $row['price'] ?>" >Edit</button>
 										<button class="btn btn-sm btn-danger delete_house" type="button" data-id="<?php echo $row['id'] ?>">Delete</button>
 									</td>
 								</tr>
@@ -152,6 +162,8 @@
 		cat.get(0).reset()
 		cat.find("[name='id']").val($(this).attr('data-id'))
 		cat.find("[name='house_no']").val($(this).attr('data-house_no'))
+		cat.find("[name='sub_land_no']").val($(this).attr('data-sub_land_no'))
+		cat.find("[name='lnd_add']").val($(this).attr('data-lnd_add'))
 		cat.find("[name='description']").val($(this).attr('data-description'))
 		cat.find("[name='price']").val($(this).attr('data-price'))
 		cat.find("[name='category_id']").val($(this).attr('data-category_id'))

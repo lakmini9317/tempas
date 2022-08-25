@@ -283,6 +283,8 @@ Class Action {
 	function save_house(){
 		extract($_POST);
 		$data = " house_no = '$house_no' ";
+		$data .= ", sub_land_no = '$sub_land_no' ";
+		$data .= ", lnd_add = '$lnd_add' ";
 		$data .= ", description = '$description' ";
 		$data .= ", category_id = '$category_id' ";
 		$data .= ", price = '$price' ";
