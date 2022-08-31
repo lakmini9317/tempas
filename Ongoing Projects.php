@@ -67,6 +67,7 @@
 						
 						<a href="edit_ctenant2.php?id=<?php echo $row['id'] ?>">EDIT</a>
 					</td> 
+					
 				 </tr>
 				<?php endwhile; ?>
 			</tbody>

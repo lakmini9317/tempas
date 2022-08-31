@@ -13,7 +13,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
         $result = $statement->fetchAll();
         $output = '';
         $output .= '
-   <table class="table table-bordered">
+   <table class="table table-bordered" > 
     <tr>
      <th >Customer Code</th>
      <th >Project Name</th>
@@ -21,7 +21,7 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
      <th >Customer Name</th>
      <th >Due Amount</th>
      <th >Expiry Date</th>
-     <th >Action</th>     
+     <th colspan="3">Action</th>     
     </tr>
   ';
         if ($statement->rowCount() > 0) {
@@ -34,7 +34,9 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
      <td>' . $row["firstname"] . '</td>
      <td>' . $row["duamnt"] . '</td>
      <td>' . $row["expdate"] . '</td>
-     <td><button type="button" id="' . $row["id"] . '" class="btn btn-warning btn-xs update">Update</button> &nbsp; <button type="button" id="' . $row["id"] . '" class="btn btn-danger btn-xs view">View</button></td>
+     <td><button type="button" id="' . $row["id"] . '" class="btn btn-danger btn-xs view">View</button></td>
+     <td><button type="button" id="' . $row["id"] . '" class="btn btn-warning btn-xs update">Update</button> </td>    
+     <td><button type="button" id="' . $row["id"] . '" class="btn btn-danger btn-xs updatepay">Update payment</button></td>
     </tr>
     ';
             }
@@ -169,9 +171,9 @@ if (isset($_POST["action"])) //Check value of $_POST["action"] variable value is
                     contact = :col27
                     
 
-   WHERE id = :id
-   "
-        );
+        WHERE id = :id
+        "
+            );
         $result = $statement->execute(
             array(
                 ':col1' => $_POST["a_projnm"],

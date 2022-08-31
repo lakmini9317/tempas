@@ -23,7 +23,19 @@ foreach($qry->fetch_array() as $k => $val){
 				</div>
 				<div class="col-md-4">
 					<label for="" class="control-label">Project Code</label>
-					<input type="text" class="form-control" name="procode"  value="<?php echo isset($procode) ? $procode :NULL ?>" required>
+					<!-- <input type="text" class="form-control" name="procode"  value="<?php echo isset($procode) ? $procode :NULL ?>" required> -->
+					<select name="house_id" id="" class="custom-select select2">
+						<option value=""></option>
+						<?php 
+						$house = $conn->query("SELECT * FROM houses where id not in (SELECT house_id from tenants where status = 1) ".(isset($house_id)? " or id = $house_id": NULL )." ");
+						while($row= $house->fetch_assoc()):
+						?>
+						<option value="<?php echo $row['id'] ?>" <?php echo isset($house_id) && $house_id == $row['id'] ? 'selected' : NULL ?>><?php echo $row['house_no'] ?></option>
+						<?php endwhile; ?>
+					</select>
+
+
+
 				</div>			
 			</div>
 
@@ -64,7 +76,9 @@ foreach($qry->fetch_array() as $k => $val){
 			<div class="row form-group">
 				<div class="col-md-4">
 					<label for="" class="control-label">Premises Address</label>
-					<select name="house_id" id="" class="custom-select select2">
+					<input type="text" class="form-control" name="procode"  value="<?php echo isset($procode) ? $procode :NULL ?>" >
+
+					<!-- <select name="house_id" id="" class="custom-select select2">
 						<option value=""></option>
 						<?php 
 						$house = $conn->query("SELECT * FROM houses where id not in (SELECT house_id from tenants where status = 1) ".(isset($house_id)? " or id = $house_id": NULL )." ");
@@ -72,7 +86,7 @@ foreach($qry->fetch_array() as $k => $val){
 						?>
 						<option value="<?php echo $row['id'] ?>" <?php echo isset($house_id) && $house_id == $row['id'] ? 'selected' : NULL ?>><?php echo $row['house_no'] ?></option>
 						<?php endwhile; ?>
-					</select>
+					</select> -->
 				</div>
 
 				<div class="col-md-4">

@@ -1,10 +1,11 @@
+
 <html>
 
 <head>
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/css/bootstrap.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -13,7 +14,7 @@
         }
 
         .box {
-            width: 1270px;
+            /* width: 1270px; */
             padding: 20px;
             background-color: #fff;
             border: 1px solid #ccc;
@@ -59,17 +60,17 @@
                     <div class="row" >
                         <div class="col-md-4">
                             <label>Project Name</label>
-                            <input type="text" name="student_first_name" id="projname" required class="form-control" />
+                            <input type="text" name="projname" id="projname" required class="form-control" />
                         </div>
 
                         <div class="col-md-4">
                             <label>Agreement Code</label>
-                            <input type="text" name="student_last_name" id="agreec" class="form-control" />
+                            <input type="text" name="agreec" id="agreec" class="form-control" />
                         </div>
 
                         <div class="col-md-4">
                             <label>File No</label>
-                            <input type="text" name="student_last_name" id="fileno" class="form-control" />
+                            <input type="text" name="fileno" id="fileno" class="form-control" />
                         </div>
                     </div> <br>
                 
@@ -439,9 +440,6 @@
                 // })
            
         });
-
-
-
 
 
 
