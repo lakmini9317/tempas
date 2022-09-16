@@ -370,6 +370,7 @@ Class Action {
 				$$k = $v;
 			}
 		}
+		
 		$months = abs(strtotime(date('Y-m-d')." 23:59:59") - strtotime($date_in." 23:59:59"));
 		$months = floor(($months) / (30*60*60*24));
 		$data['months'] = $months;
@@ -385,7 +386,11 @@ Class Action {
 		$data['name'] = ucwords($name);
 		$data['rent_started'] = date('M d, Y',strtotime($date_in));
 
+		
+
 		return json_encode($data);
+
+		
 	}
 	
 	function save_payment2(){

@@ -48,9 +48,21 @@ foreach($qry->fetch_array() as $k => $val){
 </div>
 <div id="details_clone" style="display: none">
     <div class='d'>  
-        <large><b>Details</b></large>
+        <large><b>Details</b></large>        
         <hr>
         <p>Tenant: <b class="tname"></b></p>
+
+        <!-- EDIT HERE -->
+        <?php 
+        
+        $getdtls = $conn->query("SELECT *  FROM tenants ");
+
+        while($row= $getdtls->fetch_assoc()):
+        ?>
+        <p><?php echo $row['agref'] ?> dfdff</p>
+        <?php endwhile; ?>
+
+        <!-- END HERE  -->
         <p>Monthly Rental Rate: <b class="price"></b></p>
         <p>Outstanding Balance: <b class="outstanding"></b></p>
         <p>Total Paid: <b class="total_paid"></b></p>
@@ -58,6 +70,8 @@ foreach($qry->fetch_array() as $k => $val){
         <p>Payable Months: <b class="payable_months"></b></p>
         <hr>
     </div>
+
+   
 </div>
 
 

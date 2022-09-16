@@ -19,7 +19,7 @@ include 'db_connect.php';
 								</div>
 							</div>
 						</div>
-
+  
 						<div class="col-sm-4">
 							<div class="card border-primary">
 								<div class="card-body bg-light">

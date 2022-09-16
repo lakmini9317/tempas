@@ -79,6 +79,8 @@
 										$paid = $paid->num_rows > 0 ? $paid->fetch_array()['paid'] : 0;
 										$last_payment = $last_payment->num_rows > 0 ? date("M d, Y",strtotime($last_payment->fetch_array()['date_created'])) : 'N/A';
 										$outstanding = $payable - $paid;
+
+										
 									?>
 									<tr>
 										<td><?php echo $i++ ?></td>
