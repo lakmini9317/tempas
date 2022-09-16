@@ -46,7 +46,7 @@
                                         <th>File No</th>
                                         <th>Project Code</th>
                                         <th>Customer Code</th>
-										<th>Name</th>
+										<th>Customer Name</th>
                                         <th>Address</th>
                                         <th>Premises Address</th>
                                         <th>Extent</th>
@@ -88,7 +88,7 @@
                                         <td><?php echo $row['cuscode'] ?></td>
                                         <td><?php echo ucwords($row['firstname']) ?></td>	
                                         <td><?php echo $row['privadd'] ?></td>	
-                                        <td><?php echo $row['house_id'] ?></td>	
+                                        <td><?php echo $row['house_no'] ?></td>	
                                         <td><?php echo $row['extent'] ?></td>	
                                         <td><?php echo $row['planno'] ?></td>
                                         <td><?php echo $row['lotno'] ?></td>	
